@@ -6,7 +6,7 @@
                 <small>
                     Created by <a href="http://nxu.hu">nxu</a>
                     <br>
-                    <a href="http://github.com/fertorakosi-loveszklub/flk-honlap-3/">
+                    <a href="https://github.com/fertorakosi-loveszklub/flk-honlap-3">
                         <i class="fa fa-fw fa-github"></i> Src
                     </a>
                 </small>
