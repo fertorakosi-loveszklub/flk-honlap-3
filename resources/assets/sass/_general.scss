@@ -1,0 +1,21 @@
+a,
+button {
+  transition: all .2s;
+}
+
+.btn-basic {
+  background-color: $text-color;
+  color: $body-bg;
+  height: 2.6em;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $body-bg;
+  }
+}
+
+
+main {
+  margin-top: 30px;
+}
