@@ -14,13 +14,17 @@ class User extends Authenticatable
     use Notifiable;
     use SyncableGraphNodeTrait;
 
+    public static $graph_node_field_aliases = [
+        'id' => 'facebook_user_id'
+    ];
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'custom_name'
     ];
 
     /**
@@ -40,20 +44,23 @@ class User extends Authenticatable
             "is-admin:$fbid",
             60 * 24,
             function () use ($fbid) {
-                $authorizer = new FacebookAuthorizer();
+                $authorizer = App(FacebookAuthorizer::class);
                 return $authorizer->isAdmin($fbid);
             }
         );
     }
 
-    public static function getByFacebookToken($token)
+    public function getNameAttribute()
     {
-        return Cache::remember(
-            "user-by-fbid:$token",
-            60 * 24 * 7,
-            function () use ($token) {
-                return static::where('facebook_token', $token)->first();
-            }
-        );
+        if ($this->custom_name) {
+            return $this->custom_name;
+        }
+
+        return $this->attributes['name'];
+    }
+
+    public function articles()
+    {
+        return $this->hasMany(Article::class, 'author_id');
     }
 }

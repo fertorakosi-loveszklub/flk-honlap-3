@@ -179,7 +179,8 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         SammyK\LaravelFacebookSdk\LaravelFacebookSdkServiceProvider::class,
-
+        App\Providers\ImgurProvider::class,
+        Cviebrock\EloquentSluggable\ServiceProvider::class,
     ],
 
     /*

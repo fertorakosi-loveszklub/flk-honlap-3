@@ -12,4 +12,9 @@ class HomeController extends Controller
     {
         return view('pages.home');
     }
+
+    public function adminIndex()
+    {
+        return redirect('/admin/news');
+    }
 }

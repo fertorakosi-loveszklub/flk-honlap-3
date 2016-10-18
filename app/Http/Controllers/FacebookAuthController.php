@@ -14,7 +14,7 @@ class FacebookAuthController extends Controller
 {
     public function login(LaravelFacebookSdk $facebookSdk)
     {
-        $redirectUrl = $facebookSdk->getLoginUrl();
+        $redirectUrl = $facebookSdk->getLoginUrl(['public_profile'], url('/facebook/callback'));
         return redirect($redirectUrl);
     }
 
@@ -22,7 +22,7 @@ class FacebookAuthController extends Controller
     {
         // Obtain an access token.
         try {
-            $token = $facebookSdk->getAccessTokenFromRedirect();
+            $token = $facebookSdk->getAccessTokenFromRedirect(url('/facebook/callback'));
         } catch (Exception $e) {
             Log::notice("Error during FB login, no token found.");
             return redirect('/');
@@ -43,17 +43,16 @@ class FacebookAuthController extends Controller
                 Log::notice("Can't obtain long-lived token.");
                 return redirect('/');
             }
-
-            $response = $facebookSdk->get('/me?fields=id,name', $token);
-            $fbUser = $response->getGraphUser();
-
-            $user = User::createOrUpdateGraphNode($fbUser);
-
-            Auth::login($user);
-
-            return redirect('/');
         }
 
+        $response = $facebookSdk->get('/me?fields=id,name', $token);
+        $fbUser = $response->getGraphUser();
+
+        $user = User::createOrUpdateGraphNode($fbUser);
+
+        Auth::login($user, true);
+
+        return redirect('/');
     }
 
 }

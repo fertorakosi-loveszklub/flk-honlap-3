@@ -22,7 +22,7 @@
 
             <div id="user-box">
                 @if (!Auth::check())
-                    <a href="#" class="btn btn-basic">
+                    <a href="/facebook/login" class="btn btn-basic">
                         <i class="visible-xs fa fa-fw fa-sign-in"></i>
                         <i class="hidden-xs fa fa-fw fa-facebook"></i>
                         <span class="hidden-xs">Bejelentkezés</span>
@@ -31,6 +31,18 @@
                             <i class="fa fa-sign-in fa-fw"></i>
                         </span>
                     </a>
+                @else
+                    <div class="user-menu">
+                        <span>Szia, {{ Auth::user()->name }}!</span>
+                        @if (Auth::user()->isAdmin())
+                            <a href="/admin" class="btn btn-basic">
+                                <i class="fa fa-fw fa-cog"></i> Admin
+                            </a>
+                        @endif
+                        <a href="/auth/logout" class="btn btn-basic">
+                            <i class="fa fa-fw fa-sign-out"></i> Kilépés
+                        </a>
+                    </div>
                 @endif
             </div>
         </div>
@@ -47,7 +59,7 @@
                         <li><a href="/info">Rólunk</a></li>
                         <li><a href="/hirek">Hírek</a></li>
                         <li><a href="/kepek">Galéria</a></li>
-                        <li><a href="/rekordok">Egyéni rekordok</a></li>
+                        <li><a href="/dokumentumok">Dokumentumok</a></li>
                         <li><a href="/kapcsolat">Kapcsolat</a></li>
                     </ul>
                 </nav>
