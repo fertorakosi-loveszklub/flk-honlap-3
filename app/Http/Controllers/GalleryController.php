@@ -55,17 +55,14 @@ class GalleryController extends Controller
      * Display the specified resource.
      *
      * @param  string $slug
-     * @param Client $imgurClient
      * @return \Illuminate\Http\Response
      */
-    public function show($slug, Client $imgurClient)
+    public function show($slug)
     {
         $gallery = Gallery::findBySlugOrFail($slug);
-        $images = $imgurClient->api('album')->albumImages($gallery->imgur_id);
+        $images = $gallery->getImages();
 
-        dd($images);
-
-        return view('pages.gallery', compact('gallery'));
+        return view('pages.gallery', compact('gallery', 'images'));
     }
 
     /**

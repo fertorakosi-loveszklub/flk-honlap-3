@@ -2,9 +2,11 @@
 
 namespace App;
 
+use Cache;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
 use Illuminate\Database\Eloquent\Model;
+use Imgur\Api\Model\Album;
 use Imgur\Client;
 
 class Gallery extends Model
@@ -42,6 +44,25 @@ class Gallery extends Model
 
     public function getCoverImageUrlAttribute()
     {
-        $client = app(Client::class);
+        return 'https://i.imgur.com/' . $this->getAlbumObject()->getCover() . '.jpg';
+    }
+
+    public function getImages()
+    {
+        return $this->getAlbumObject()->getImages();
+    }
+
+    /**
+     * Gets the album object from Imgur.
+     *
+     * @return Album
+     */
+    protected function getAlbumObject()
+    {
+        return Cache::remember("album-obj:{$this->id}", 3600, function () {
+            $client = app(Client::class);
+            $album = $client->api('album')->album($this->imgur_id);
+            return $album;
+        });
     }
 }
