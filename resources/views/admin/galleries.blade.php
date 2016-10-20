@@ -1,4 +1,7 @@
-@extends('admin')
+@extends('admin', [
+    'seoTitle' => 'Galéria',
+    'seoDescription' => 'Képek a Fertőrákosi Lövészklub életéből'
+])
 
 @section('content')
     <div class="panel panel-primary">

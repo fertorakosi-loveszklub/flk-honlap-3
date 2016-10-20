@@ -49,6 +49,8 @@ class GalleryController extends Controller
 
     public function showList()
     {
+        $galleries = Gallery::orderBy('created_at', 'desc')->get();
+        return view('pages.gallery-list', compact('galleries'));
     }
 
     /**

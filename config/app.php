@@ -181,6 +181,7 @@ return [
         SammyK\LaravelFacebookSdk\LaravelFacebookSdkServiceProvider::class,
         App\Providers\ImgurProvider::class,
         Cviebrock\EloquentSluggable\ServiceProvider::class,
+        Folklore\Image\ImageServiceProvider::class,
     ],
 
     /*
@@ -229,6 +230,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        'Image' => Folklore\Image\Facades\Image::class
     ],
 
 ];

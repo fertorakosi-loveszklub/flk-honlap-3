@@ -10,7 +10,7 @@
         <div class="col-xs-12">
             <ol class="breadcrumb">
                 <li><a href="/">Főoldal</a></li>
-                <li><a href="/kepek">Galéria</a></li>
+                <li><a href="/galeria">Galéria</a></li>
                 <li class="active">{{ $gallery->title }}</li>
             </ol>
         </div>
