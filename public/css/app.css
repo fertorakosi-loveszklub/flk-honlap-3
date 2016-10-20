@@ -5977,9 +5977,37 @@ footer {
   display: block;
   margin-bottom: 15px; }
 
-#gallery {
-  margin-top: 0; }
-  #gallery h1 {
+#gallery,
+#gallery-list {
+  margin-top: -30px; }
+  #gallery h1,
+  #gallery-list h1 {
     margin-top: 0; }
+  #gallery .gallery-link,
+  #gallery-list .gallery-link {
+    display: inline-block;
+    position: relative;
+    width: 300px;
+    margin: 15px; }
+    #gallery .gallery-link img,
+    #gallery-list .gallery-link img {
+      max-width: 100%; }
+    #gallery .gallery-link .title,
+    #gallery-list .gallery-link .title {
+      position: absolute;
+      padding: 15px 30px;
+      text-align: center;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      font-family: "Noto Serif", serif;
+      -webkit-transition: .2s all;
+      transition: .2s all;
+      font-size: 1.5em; }
+    #gallery .gallery-link:hover .title,
+    #gallery-list .gallery-link:hover .title {
+      background: rgba(0, 0, 0, 0.9); }
 
 /*# sourceMappingURL=app.css.map */

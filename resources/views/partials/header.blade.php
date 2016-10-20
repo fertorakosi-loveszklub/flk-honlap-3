@@ -58,7 +58,7 @@
                         <li><a href="/">Főoldal</a></li>
                         <li><a href="/info">Rólunk</a></li>
                         <li><a href="/hirek">Hírek</a></li>
-                        <li><a href="/kepek">Galéria</a></li>
+                        <li><a href="/galeria">Galéria</a></li>
                         <li><a href="/dokumentumok">Dokumentumok</a></li>
                         <li><a href="/kapcsolat">Kapcsolat</a></li>
                     </ul>

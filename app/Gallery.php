@@ -47,6 +47,20 @@ class Gallery extends Model
         return 'https://i.imgur.com/' . $this->getAlbumObject()->getCover() . '.jpg';
     }
 
+    public function getThumbnailUrlAttribute()
+    {
+        // Download file to cache if it doesn't exist yet
+        $id = $this->getAlbumObject()->getCover();
+        if (! file_exists(public_path("cache/$id.jpg"))) {
+            file_put_contents(
+                public_path("cache/$id.jpg"),
+                fopen("http://i.imgur.com/$id.jpg", 'r')
+            );
+        }
+
+        return "/cache/$id.jpg";
+    }
+
     public function getImages()
     {
         return $this->getAlbumObject()->getImages();
