@@ -16,6 +16,8 @@ Route::get('/facebook/callback', 'FacebookAuthController@callback');
 Route::get('/', 'HomeController@index');
 Route::get('/galeria', 'GalleryController@showList');
 Route::get('/galeria/{slug}', 'GalleryController@show');
+Route::get('/hirek', 'NewsController@showList');
+Route::get('/hirek/{slug}', 'NewsController@show');
 
 Route::group(['prefix' => 'admin', 'middleware' => ['admin']], function () {
     Route::get('/', 'HomeController@adminIndex');

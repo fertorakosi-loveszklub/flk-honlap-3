@@ -8,7 +8,7 @@
         
         <div class="row" id="title-row">
             <div class="hidden-xs col-sm-5" id="logo-container">
-                <a href="/" target="_blank">
+                <a href="/">
                     <img id="logo" src="/img/logo.png" alt="Fertőrákosi Lövészklub">
                 </a>
             </div>
@@ -39,6 +39,7 @@
                                 <i class="fa fa-fw fa-cog"></i> Admin
                             </a>
                         @endif
+                        {{ csrf_field() }}
                         <a href="/auth/logout" class="btn btn-basic">
                             <i class="fa fa-fw fa-sign-out"></i> Kilépés
                         </a>

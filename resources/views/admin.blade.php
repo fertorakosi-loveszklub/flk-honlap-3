@@ -7,91 +7,66 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>FLK Admin</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.3.0/ui/trumbowyg.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/admin.css" />
 </head>
-<body>
+<body id="admin">
 
-<div class="hidden">
+<div style="display: none">
     @include('partials.trumbo-svg')
 </div>
 
-<nav class="navbar navbar-default">
-    <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <a class="navbar-brand" href="/admin">
-                FLK
-            </a>
+<header>
+    <nav class="top-nav">
+        <div class="container">
+            <div class="nav-wrapper"><a class="page-title">{{ $title or "Hírek" }}</a></div>
         </div>
+    </nav>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#">
-                        <img src="//graph.facebook.com/{{ Auth::user()->facebook_user_id }}/picture?height=18" alt="profilkép">
-                        {{ Auth::user()->name }}
-                    </a>
-                </li>
-                <li><a href="/">Vissza az oldalra </a></li>
-            </ul>
-        </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-</nav>
-
-
-<div class="container">
-    <div class="row">
-        <div class="col-lg-12">
-            @if (session('status'))
-                <div class="alert alert-{{ session('status')['type'] }}">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    {{ session('status')['message'] }}
-                </div>
-            @endif
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-2">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    Menü
-                </div>
-
-                <ul class="list-group">
-                    <li class="list-group-item">
-                        <a href="/admin/news">Hírek</a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="/admin/galleries">Galériák</a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="/admin/documents">Dokumentumok</a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="/admin/pages">Tartalmak</a>
-                    </li>
-                </ul>
+    <ul id="nav-mobile" class="side-nav fixed">
+        <li>
+            <div class="userView">
+                <img src="//i.imgur.com/R3bj5JE.jpg" class="background" alt="">
+                <a href="#!user"><img class="circle" src="//graph.facebook.com/{{ Auth::user()->facebook_user_id }}/picture?height=65" /></a>
+                <a href="#!name"><span class="white-text name">{{ Auth::user()->name }}</span></a>
             </div>
+        </li>
+        <li><a href="/admin/news">Hírek</a></li>
+        <li><a href="/admin/galleries">Galéria</a></li>
+        <li><a href="/admin/documents">Dokumentumok</a></li>
+        <li><a href="/admin/pages">Tartalmak</a></li>
+    </ul>
+    <a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only">
+        <i class="material-icons">menu</i>
+    </a>
+</header>
 
-        </div>
-
-        <div class="col-lg-10">
-            @yield('content')
-        </div>
+@if (session('status'))
+    <div class="alert alert-{{ session('status')['type'] }}">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        {{ session('status')['message'] }}
     </div>
-</div>
+@endif
+
+<main>
+    <div class="container">
+        @yield('content')
+    </div>
+</main>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.3.0/trumbowyg.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.3.0/langs/hu.min.js"></script>
 
 <script type="text/javascript">
     $(document).ready(function() {
+        $(".button-collapse").sideNav();
+
         $('.trumbowyg').trumbowyg({
             lang: 'hu',
         });
