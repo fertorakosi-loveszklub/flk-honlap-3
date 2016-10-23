@@ -10,7 +10,8 @@
         "sammyk/laravel-facebook-sdk": "^3.4",
         "j0k3r/php-imgur-api-client": "^1.1",
         "cviebrock/eloquent-sluggable": "^4.1",
-        "folklore/image": "^0.3.16"
+        "folklore/image": "^0.3.16",
+        "jenssegers/date": "^3.2"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

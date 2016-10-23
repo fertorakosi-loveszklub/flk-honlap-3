@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Jenssegers\Date\Date;
 
 class Article extends Model
 {
@@ -16,7 +17,8 @@ class Article extends Model
         'title',
         'lead',
         'content',
-        'published_at'
+        'published_at',
+        'is_visible'
     ];
 
     protected $dates = [
@@ -36,6 +38,11 @@ class Article extends Model
         ];
     }
 
+    public function getPublicationAttribute()
+    {
+        return new Date($this->published_at);
+    }
+
     public function getPublicationDateAttribute()
     {
         return $this->published_at->format('Y-m-d');
@@ -53,6 +60,8 @@ class Article extends Model
 
     public function scopePublished($query)
     {
-        return $query->where('published_at', '<=', Carbon::now());
+        return $query
+            ->where('published_at', '<=', Carbon::now())
+            ->where('is_visible', true);
     }
 }

@@ -6,7 +6,9 @@
             <div class="item active">
                 <img src="/img/gun-1.jpg" alt="Légfegyveres lövészet">
                 <div class="carousel-caption">
-                    <h2>Légfegyveres <br> lövészet</h2>
+                    <h2>Sportlövészet <br>
+                        Kicsiknek és nagyoknak
+                    </h2>
                 </div>
             </div>
             {{--<div class="item">--}}
@@ -68,38 +70,20 @@
         </div>
 
         <div class="row">
-            <article class="col-xs-12 col-sm-4">
-                <h1>Ez egy példacím</h1>
-                <time datetime="2016-01-01">2016. 01. 01.</time>
+            @foreach($news as $article)
+                <article class="col-xs-12 col-sm-4">
+                    <a href="/hirek/{{ $article->slug }}"><h1>{{ $article->title }}</h1></a>
+                    <time datetime="{{ $article->published_at->format('Y-m-d') }}">
+                        {{ $article->publication->format('Y. F j.') }}
+                    </time>
 
-                <p class="intro">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum cupiditate fuga labore possimus quasi quos reiciendis. Adipisci aliquam ea error est eum fuga iusto modi natus sunt voluptatibus! Mollitia, quas?
-                    <br>
-                    <a href="#">Tovább &raquo;</a>
-                </p>
-            </article>
-
-            <article class="col-xs-12 col-sm-4">
-                <h1>Ez egy jó hosszú cím, tesztelem, vajon rendesen kifér-e</h1>
-                <time datetime="2016-01-01">2016. 01. 01.</time>
-
-                <p class="intro">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum cupiditate fuga labore possimus quasi quos reiciendis. Adipisci aliquam ea error est eum fuga iusto modi natus sunt voluptatibus! Mollitia, quas?
-                    <br>
-                    <a href="#">Tovább &raquo;</a>
-                </p>
-            </article>
-
-            <article class="col-xs-12 col-sm-4">
-                <h1>Ez egy példacím</h1>
-                <time datetime="2016-01-01">2016. 01. 01.</time>
-
-                <p class="intro">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum cupiditate fuga labore possimus quasi quos reiciendis. Adipisci aliquam ea error est eum fuga iusto modi natus sunt voluptatibus! Mollitia, quas?
-                    <br>
-                    <a href="#">Tovább &raquo;</a>
-                </p>
-            </article>
+                    <p class="intro">
+                        {{ str_limit($article->lead, 250) }}
+                        <br>
+                        <a href="/hirek/{{ $article->slug }}">Tovább &raquo;</a>
+                    </p>
+                </article>
+            @endforeach
         </div>
     </div>
 @endsection
