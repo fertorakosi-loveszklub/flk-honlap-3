@@ -1,5 +1,7 @@
 header {
   position: relative; }
+  header nav {
+    background-color: #1e88e5; }
   header nav .nav-wrapper {
     text-align: center;
     position: relative;
@@ -25,10 +27,26 @@ header {
   .container {
     width: 90%; }
   nav.top-nav {
-    height: 120px; }
+    height: 120px;
+    box-shadow: none; }
   .page-title {
     font-size: 36px;
     line-height: 120px; } }
+
+.side-nav li.active {
+  background-color: #1e88e5; }
+  .side-nav li.active a {
+    color: white; }
+
+.input-field {
+  margin-top: 1.5rem; }
+
+.fixed-action-btn {
+  bottom: 45px;
+  right: 30px; }
+
+td form button {
+  margin-left: 15px; }
 
 /** Responsive tables */
 @media (max-width: 991px) {
@@ -61,5 +79,20 @@ header {
     width: 45%;
     padding-right: 10px;
     white-space: nowrap; } }
+
+.alert {
+  padding: 10px 15px;
+  color: white;
+  margin: 15px 0; }
+  .alert.alert-info {
+    background-color: #90caf9;
+    color: black; }
+  .alert.alert-danger {
+    background-color: #ef5350; }
+  .alert.alert-success {
+    background-color: #4caf50; }
+  .alert.alert-warning {
+    background-color: #fff176;
+    color: black; }
 
 /*# sourceMappingURL=admin.css.map */

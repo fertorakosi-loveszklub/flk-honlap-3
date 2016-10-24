@@ -8,6 +8,14 @@ use Imgur\Client;
 
 class GalleryController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(function ($request, $next) {
+            session(['admin_module' => 'gallery']);
+            return $next($request);
+        });
+    }
+
     /**
      * Display a listing of the resource.
      *

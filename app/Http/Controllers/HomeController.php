@@ -6,11 +6,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Article;
+
 class HomeController extends Controller
 {
     public function index()
     {
-        return view('pages.home');
+        $news = Article::published()
+            ->orderBy('published_at', 'desc')
+            ->limit(3)
+            ->get();
+
+        return view('pages.home', compact('news'));
     }
 
     public function adminIndex()

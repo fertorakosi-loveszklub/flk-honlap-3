@@ -9,6 +9,14 @@ use Carbon\Carbon;
 
 class NewsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(function ($request, $next) {
+            session(['admin_module' => 'news']);
+            return $next($request);
+        });
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -52,12 +60,13 @@ class NewsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  string $slug
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
+        $article = Article::where('slug', $slug)->first();
+        return view('pages.article', compact('article'));
     }
 
     /**
@@ -83,7 +92,13 @@ class NewsController extends Controller
     public function update(ArticleRequest $request, $id)
     {
         $article = Article::findOrFail($id);
-        $article->update($request->all());
+        $article->fill($request->all());
+
+        if (!$request->get('is_visible')) {
+            $article->is_visible = false;
+        }
+
+        $article->save();
 
         return redirect('/admin/news')->with('status', [
             'type' => 'success',
@@ -104,5 +119,14 @@ class NewsController extends Controller
             'type' => 'success',
             'message' => 'Cikk sikeresen törölve'
         ]);
+    }
+
+    public function showList()
+    {
+        $articles = Article::published()
+            ->orderBy('published_at', 'desc')
+            ->paginate(9);
+
+        return view('pages.article-list', compact('articles'));
     }
 }

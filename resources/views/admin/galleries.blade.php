@@ -1,52 +1,44 @@
 @extends('admin', [
-    'seoTitle' => 'Galéria',
-    'seoDescription' => 'Képek a Fertőrákosi Lövészklub életéből'
+    'title' => 'Galéria'
 ])
 
 @section('content')
-    <div class="panel panel-primary">
-        <div class="panel-heading">
-            <h3 class="panel-title">Galériák</h3>
-        </div>
+    <h3>Galériák</h3>
 
-        <div class="panel-body">
-            <a href="{{ route('galleries.create') }}" class="btn btn-success">
-                Új galéria
-            </a>
-        </div>
-
-        <table class="table table-hover table-striped">
-            <thead>
+    <table class="table ">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Cím</th>
+            <th>Műveletek</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach($galleries as $gallery)
             <tr>
-                <th>#</th>
-                <th>Cím</th>
-                <th>Szerkesztés</th>
-                <th>Törlés</th>
-            </tr>
-            </thead>
-            <tbody>
-            @foreach($galleries as $gallery)
-                <tr>
-                    <td>{{ $gallery->id }}</td>
-                    <td>{{ $gallery->title }}</td>
-                    <td>
-                        <a href="{{ route('galleries.edit', ['galleries' => $gallery->id]) }}" class="btn btn-success">
-                            Szerkesztés
-                        </a>
-                    </td>
-                    <td>
-                        <form action="{{ route('galleries.destroy', ['galleries' => $gallery->id]) }}" method="post">
-                            {{ csrf_field() }}
-                            {{ method_field('DELETE') }}
+                <td>{{ $gallery->id }}</td>
+                <td>{{ $gallery->title }}</td>
+                <td>
+                    <a href="{{ route('galleries.edit', ['galleries' => $gallery->id]) }}" class="left blue darken-1 btn-floating waves-effect">
+                        <i class="material-icons">edit</i>
+                    </a>
+                    <form action="{{ route('galleries.destroy', ['galleries' => $gallery->id]) }}" class="left" method="post">
+                        {{ csrf_field() }}
+                        {{ method_field('DELETE') }}
 
-                            <button type="submit" class="btn btn-danger">
-                                Törlés
-                            </button>
-                        </form>
-                    </td>
-                </tr>
-            @endforeach
-            </tbody>
-        </table>
+                        <button type="submit" class="btn-floating waves-effect red darken-1">
+                            <i class="material-icons">delete</i>
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        @endforeach
+        </tbody>
+    </table>
+
+    <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+        <a href="{{ route('galleries.create') }}" class="btn-floating btn-large green">
+            <i class="large material-icons">add</i>
+        </a>
     </div>
 @endsection

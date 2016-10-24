@@ -1,0 +1,32 @@
+#article {
+  margin-top: -30px;
+
+  article {
+    h1 {
+      margin-bottom: 15px;
+    }
+
+    .article-info {
+      font-size: .85em;
+      margin-bottom: 30px;
+
+      img,
+      span {
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      .separator {
+        margin: 0 5px;
+      }
+
+      img {
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+.article-list {
+  margin: 15px;
+}

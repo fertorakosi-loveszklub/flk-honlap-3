@@ -30,33 +30,51 @@
             <div class="userView">
                 <img src="//i.imgur.com/R3bj5JE.jpg" class="background" alt="">
                 <a href="#!user"><img class="circle" src="//graph.facebook.com/{{ Auth::user()->facebook_user_id }}/picture?height=65" /></a>
-                <a href="#!name"><span class="white-text name">{{ Auth::user()->name }}</span></a>
+                <a href="#name-modal" class="modal-trigger"><span class="white-text name">{{ Auth::user()->name }}</span></a>
             </div>
         </li>
-        <li><a href="/admin/news">Hírek</a></li>
-        <li><a href="/admin/galleries">Galéria</a></li>
-        <li><a href="/admin/documents">Dokumentumok</a></li>
-        <li><a href="/admin/pages">Tartalmak</a></li>
+        <li @if (session('admin_module') == 'news')class="active"@endif><a href="/admin/news">Hírek</a></li>
+        <li @if (session('admin_module') == 'gallery')class="active"@endif><a href="/admin/galleries">Galéria</a></li>
+        <li @if (session('admin_module') == 'documents')class="active"@endif><a href="/admin/documents">Dokumentumok</a></li>
+        <li @if (session('admin_module') == 'pages')class="active"@endif><a href="/admin/pages">Tartalmak</a></li>
     </ul>
     <a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only">
         <i class="material-icons">menu</i>
     </a>
 </header>
 
-@if (session('status'))
-    <div class="alert alert-{{ session('status')['type'] }}">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-        {{ session('status')['message'] }}
-    </div>
-@endif
-
 <main>
     <div class="container">
+        @if (session('status'))
+            <div class="alert alert-{{ session('status')['type'] }}">
+                {{ session('status')['message'] }}
+            </div>
+        @endif
+
         @yield('content')
     </div>
 </main>
+
+<div id="name-modal" class="modal" style="max-width: 450px;">
+    <form action="/admin/name" method="POST">
+        {{ csrf_field() }}
+        <div class="modal-content">
+            <h4>Név megváltoztatása</h4>
+            <div class="input-field">
+                <label for="custom_name">Neved</label>
+                <input type="text" id="custom_name" name="custom_name"
+                    value="{{ auth()->user()->name }}">
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="submit" class="btn blue modal-action waves-effect waves-green">
+                Mentés
+                <i class="material-icons right">send</i>
+            </button>
+        </div>
+    </form>
+</div>
+
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
@@ -65,13 +83,14 @@
 
 <script type="text/javascript">
     $(document).ready(function() {
+        $('.modal-trigger').leanModal();
         $(".button-collapse").sideNav();
 
         $('.trumbowyg').trumbowyg({
             lang: 'hu',
         });
 
-        $(".btn-danger").click(function (e) {
+        $(".red.darken-4").click(function (e) {
             if (! confirm('Biztos vagy benne?')) {
                 e.preventDefault();
                 return false;

@@ -6010,4 +6010,23 @@ footer {
     #gallery-list .gallery-link:hover .title {
       background: rgba(0, 0, 0, 0.9); }
 
+#article {
+  margin-top: -30px; }
+  #article article h1 {
+    margin-bottom: 15px; }
+  #article article .article-info {
+    font-size: .85em;
+    margin-bottom: 30px; }
+    #article article .article-info img,
+    #article article .article-info span {
+      display: inline-block;
+      vertical-align: middle; }
+    #article article .article-info .separator {
+      margin: 0 5px; }
+    #article article .article-info img {
+      border-radius: 50%; }
+
+.article-list {
+  margin: 15px; }
+
 /*# sourceMappingURL=app.css.map */

@@ -21,6 +21,7 @@ Route::get('/hirek/{slug}', 'NewsController@show');
 
 Route::group(['prefix' => 'admin', 'middleware' => ['admin']], function () {
     Route::get('/', 'HomeController@adminIndex');
+    Route::post('/name', 'FacebookAuthController@saveName');
     Route::resource('/news', 'NewsController', ['except' => ['show']]);
     Route::resource('/galleries', 'GalleryController', ['except' => ['show']]);
 });

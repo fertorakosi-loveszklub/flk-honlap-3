@@ -7,6 +7,7 @@ use App\Http\Requests;
 use App\User;
 use Auth;
 use Exception;
+use Illuminate\Http\Request;
 use Log;
 use SammyK\LaravelFacebookSdk\LaravelFacebookSdk;
 
@@ -55,4 +56,13 @@ class FacebookAuthController extends Controller
         return redirect('/');
     }
 
+    public function saveName(Request $request)
+    {
+        auth()->user()->update(['custom_name' => $request->get('custom_name')]);
+
+        return redirect()->back()->with('status', [
+            'type' => 'success',
+            'message' => 'Sikeresen megváltoztattad a neved.'
+        ]);
+    }
 }

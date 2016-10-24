@@ -182,6 +182,7 @@ return [
         App\Providers\ImgurProvider::class,
         Cviebrock\EloquentSluggable\ServiceProvider::class,
         Folklore\Image\ImageServiceProvider::class,
+        Jenssegers\Date\DateServiceProvider::class,
     ],
 
     /*
