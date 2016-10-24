@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="hu">
+<html lang="hu" xmlns:og="http://ogp.me/ns#">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -11,8 +11,12 @@
 
     <meta property="og:title" content="@if (!empty($seoTitle)){{ $seoTitle }} -@endif Fertőrákosi Lövészklub" />
     <meta property="og:url" content="http://www.imdb.com/title/tt0117500/" />
-    <meta property="og:image" content="{{ $seoImage or "/img/logo.png" }}" />
+    <meta property="og:image" content="{{ $seoImage or url("/img/fb_share.jpg") }}" />
     <meta property="og:description" content="{{ $seoDescription }}" />
+    @if (!empty($seoType))
+        <meta property="og:type" content="{{ $seoType }}" />
+    @endif
+    <meta property="fb:pages" content="1513962075484348" />
 
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
     <link href="//fonts.googleapis.com/css?family=Noto+Sans:400,400i,700|Noto+Serif:400,700&amp;subset=latin-ext" rel="stylesheet">
@@ -21,6 +25,7 @@
     @yield('headers')
 </head>
 <body class="home">
+<div id="fb-root"></div>
 
 @include('partials.header')
 
@@ -45,5 +50,12 @@
         ga('send', 'pageview');
     </script>
 @endif
+<script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/hu_HU/sdk.js#xfbml=1&version=v2.8&appId=228336310678604";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
 </body>
 </html>

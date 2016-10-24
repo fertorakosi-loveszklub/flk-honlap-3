@@ -5938,11 +5938,8 @@ footer {
           padding: 0;
           left: auto;
           top: auto;
-          bottom: 8vw;
-          right: 19vw; } }
-        @media (min-width: 992px) and (max-width: 1400px) {
-          #slider .carousel-inner .item:nth-of-type(1) .carousel-caption {
-            right: 12vw; } }
+          bottom: 6vw;
+          right: 10vw; } }
 
 #cta-container {
   text-align: center;
@@ -6028,5 +6025,14 @@ footer {
 
 .article-list {
   margin: 15px; }
+
+.social {
+  margin-bottom: 15px; }
+
+#document #document-list .file-row {
+  padding: 10px;
+  border-top: 1px solid #eeeeee; }
+  #document #document-list .file-row:last-child {
+    border-bottom: 1px solid #eeeeee; }
 
 /*# sourceMappingURL=app.css.map */
