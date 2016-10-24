@@ -61,6 +61,13 @@
             </div>
         </div>
 
+
+        <hr>
+
+        <div id="edzes-info" class="text-center">
+            <h4>Edzések minden szombaton!</h4>
+        </div>
+
         <hr>
 
         <div class="row">

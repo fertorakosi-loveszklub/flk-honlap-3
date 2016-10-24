@@ -1,0 +1,12 @@
+#document {
+  #document-list {
+    .file-row {
+      padding: 10px;
+      border-top: 1px solid $gray-lighter;
+
+      &:last-child {
+        border-bottom: 1px solid $gray-lighter;
+      }
+    }
+  }
+}

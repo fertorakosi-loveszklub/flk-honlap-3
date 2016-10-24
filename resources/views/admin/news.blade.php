@@ -42,7 +42,7 @@
                         {{ csrf_field() }}
                         {{ method_field('DELETE') }}
 
-                        <button type="submit" class="left btn-floating waves-effect red darken-4">
+                        <button type="submit" class="left btn-floating waves-effect red darken-1">
                             <i class="material-icons">delete</i>
                         </button>
                     </form>

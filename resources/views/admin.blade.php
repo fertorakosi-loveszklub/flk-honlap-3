@@ -90,7 +90,7 @@
             lang: 'hu',
         });
 
-        $(".red.darken-4").click(function (e) {
+        $(".red").click(function (e) {
             if (! confirm('Biztos vagy benne?')) {
                 e.preventDefault();
                 return false;
