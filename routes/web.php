@@ -14,6 +14,7 @@ Route::get('/facebook/login', 'FacebookAuthController@login');
 Route::get('/facebook/callback', 'FacebookAuthController@callback');
 
 Route::get('/', 'HomeController@index');
+Route::get('/rolunk', 'PageController@showAbout');
 Route::get('/galeria', 'GalleryController@showList');
 Route::get('/galeria/{slug}', 'GalleryController@show');
 Route::get('/hirek', 'NewsController@showList');
@@ -26,4 +27,5 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin']], function () {
     Route::resource('/news', 'NewsController', ['except' => ['show']]);
     Route::resource('/galleries', 'GalleryController', ['except' => ['show']]);
     Route::resource('/documents', 'DocumentController', ['except' => ['show']]);
+    Route::resource('/pages', 'PageController', ['except' => ['show']]);
 });
