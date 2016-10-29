@@ -20,6 +20,8 @@ Route::get('/galeria/{slug}', 'GalleryController@show');
 Route::get('/hirek', 'NewsController@showList');
 Route::get('/hirek/{slug}', 'NewsController@show');
 Route::get('/dokumentumok', 'DocumentController@showList');
+Route::get('/kapcsolat', 'ContactController@index');
+Route::post('/kapcsolat', 'ContactController@postContact');
 
 Route::group(['prefix' => 'admin', 'middleware' => ['admin']], function () {
     Route::get('/', 'HomeController@adminIndex');

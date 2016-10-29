@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1e710b5da47033d3630573f7950e1ac7",
-    "content-hash": "5050f68a97eb65c989076227c5357844",
+    "hash": "0fb864013afff59b0b7eb7c345097007",
+    "content-hash": "64a5df29cb5926e332bb6cd305b85f84",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -1260,6 +1260,55 @@
                 "psr-3"
             ],
             "time": "2016-07-29 03:23:52"
+        },
+        {
+            "name": "msurguy/honeypot",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/msurguy/Honeypot.git",
+                "reference": "1ae75cfa11cc02fdc3b1e53363d3122203e7e7f9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/msurguy/Honeypot/zipball/1ae75cfa11cc02fdc3b1e53363d3122203e7e7f9",
+                "reference": "1ae75cfa11cc02fdc3b1e53363d3122203e7e7f9",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/config": "4.*|5.*",
+                "illuminate/support": "4.*|5.*",
+                "illuminate/translation": "4.*|5.*",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.9.*",
+                "phpunit/phpunit": "4.0.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Msurguy\\Honeypot\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Maksim Surguy",
+                    "email": "m.surguy@gmail.com"
+                }
+            ],
+            "description": "Honeypot spam prevention",
+            "keywords": [
+                "Forms",
+                "Honeypot",
+                "laravel",
+                "spam"
+            ],
+            "time": "2016-01-31 23:09:00"
         },
         {
             "name": "mtdowling/cron-expression",

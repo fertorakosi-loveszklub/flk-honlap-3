@@ -56,8 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => 'hello@example.com',
-        'name' => 'Example',
+        'address' => 'info@fertorakosi-loveszklub.hu',
+        'name' => 'Fertőrákosi Lövészklub',
     ],
 
     /*

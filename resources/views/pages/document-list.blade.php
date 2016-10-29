@@ -19,7 +19,7 @@
         </div>
 
         <div id="document-list">
-            @foreach($documents as $document)
+            @forelse($documents as $document)
                 <div class="row file-row">
                     <div class="col-xs-12 col-sm-8">
                         <a href="{{ url($document->file_path) }}" target="_blank" class="text-center visible-xs">
@@ -33,7 +33,15 @@
                         </a>
                     </div>
                 </div>
-            @endforeach
+            @empty
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="alert alert-info">
+                            Jelenleg nincs feltöltve dokumentum.
+                        </div>
+                    </div>
+                </div>
+            @endforelse
         </div>
     </div>
 @endsection

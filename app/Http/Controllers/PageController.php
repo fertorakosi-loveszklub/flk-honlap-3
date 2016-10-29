@@ -69,6 +69,11 @@ class PageController extends Controller
      */
     public function show($page)
     {
+        if (! $page) {
+            abort(404);
+        }
+        
+
         return view('pages.page', compact('page'));
     }
 

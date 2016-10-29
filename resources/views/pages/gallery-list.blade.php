@@ -16,12 +16,16 @@
 
         <div class="row">
             <div class="col-xs-12 text-center">
-                @foreach($galleries as $gallery)
+                @forelse($galleries as $gallery)
                     <a class="gallery-link" href="/galeria/{{ $gallery->slug }}">
                         <img src="{{ Image::url($gallery->thumbnail_url, 300, 300, ['crop']) }}" alt="{{ $gallery->title }}">
                         <span class="title">{{ $gallery->title }}</span>
                     </a>
-                @endforeach
+                @empty
+                    <div class="alert alert-info">
+                        Jelenleg nincs feltöltve galériánk.
+                    </div>
+                @endforelse
             </div>
         </div>
     </div>

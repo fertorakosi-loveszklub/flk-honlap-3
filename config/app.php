@@ -183,6 +183,7 @@ return [
         Cviebrock\EloquentSluggable\ServiceProvider::class,
         Folklore\Image\ImageServiceProvider::class,
         Jenssegers\Date\DateServiceProvider::class,
+        Msurguy\Honeypot\HoneypotServiceProvider::class,
     ],
 
     /*
@@ -231,7 +232,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
-        'Image' => Folklore\Image\Facades\Image::class
+        'Image' => Folklore\Image\Facades\Image::class,
+        'Honeypot' => Msurguy\Honeypot\HoneypotFacade::class,
     ],
 
 ];
