@@ -48,9 +48,11 @@
                 @endif
 
             @empty
-                <div class="row col-xs-12">
-                    <div class="alert alert-info">
-                        Jelenleg nincs új hírünk.
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="alert alert-info">
+                            Jelenleg nincs új hírünk.
+                        </div>
                     </div>
                 </div>
             @endforelse
