@@ -72,6 +72,7 @@ class PageController extends Controller
         if (! $page) {
             abort(404);
         }
+        
 
         return view('pages.page', compact('page'));
     }

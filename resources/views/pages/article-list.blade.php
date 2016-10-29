@@ -14,7 +14,7 @@
             </div>
         </div>
         <div class="row">
-            @foreach($articles as $article)
+            @forelse($articles as $article)
             <div class="col-xs-12 col-sm-4 article-box">
                 <article>
                     <a href="/hirek/{{ $article->slug }}"><h1>{{ $article->title }}</h1></a>
@@ -46,7 +46,14 @@
                 @if(($loop->index + 1) % 3 == 0)
                     <div class="clearfix"></div>
                 @endif
-            @endforeach
+
+            @empty
+                <div class="row col-xs-12">
+                    <div class="alert alert-info">
+                        Jelenleg nincs új hírünk.
+                    </div>
+                </div>
+            @endforelse
         </div>
     </div>
 @endsection
