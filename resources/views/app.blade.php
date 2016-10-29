@@ -10,7 +10,7 @@
     <meta name="description" content="{{ $seoDescription or $seoDescription = "Fertőrákosi Lövészklub: légfegyveres lövészet, sportlövészet, íjászat kezdőknek és haladóknak egyaránt." }}">
 
     <meta property="og:title" content="@if (!empty($seoTitle)){{ $seoTitle }} -@endif Fertőrákosi Lövészklub" />
-    <meta property="og:url" content="http://www.imdb.com/title/tt0117500/" />
+    <meta property="og:url" content="{{ request()->fullUrl() }}" />
     <meta property="og:image" content="{{ $seoImage or url("/img/fb_share.jpg") }}" />
     <meta property="og:description" content="{{ $seoDescription }}" />
     @if (!empty($seoType))
