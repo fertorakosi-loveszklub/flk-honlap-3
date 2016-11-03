@@ -9,7 +9,7 @@
         <div class="row" id="title-row">
             <div class="hidden-xs col-sm-5" id="logo-container">
                 <a href="/">
-                    <img id="logo" src="/img/logo.png" alt="Fertőrákosi Lövészklub">
+                    <img id="logo" src="/img/logo_small.png" alt="Fertőrákosi Lövészklub">
                 </a>
             </div>
 
