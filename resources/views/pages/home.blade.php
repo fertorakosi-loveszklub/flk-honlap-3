@@ -43,7 +43,7 @@
 
         <div class="row text-center" id="home--services">
             <div class="col-xs-12 col-sm-4">
-                <img src="/img/airgun_small.jpg" alt="Légfegyveres lövészet">
+                <img src="/img/airgun_small_c.jpg" alt="Légfegyveres lövészet">
                 <h3>Légfegyveres lövészet</h3>
                 <p>Lövészet légfegyverekkel 10m-es távon <br> Légpuska, légpisztoly</p>
             </div>
