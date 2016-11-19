@@ -2,6 +2,12 @@
   margin-top: -30px;
 
   article {
+    margin: 0 auto;
+
+    @media (min-width: 1200px) {
+      width: 80%;
+    }
+
     h1 {
       margin-bottom: 15px;
     }
@@ -23,6 +29,10 @@
       img {
         border-radius: 50%;
       }
+    }
+
+    img {
+      max-width: 100%;
     }
   }
 }
