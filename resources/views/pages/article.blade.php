@@ -4,6 +4,10 @@
     'seoType' => 'article'
 ])
 
+@section('headers')
+    <link rel="amphtml" href="{{ url('/hirek/' . $article->slug . '/amp') }}">
+@endsection
+
 @section('content')
     <div class="container" id="article">
         <div class="row">

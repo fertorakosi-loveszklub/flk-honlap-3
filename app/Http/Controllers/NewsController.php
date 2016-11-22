@@ -70,6 +70,18 @@ class NewsController extends Controller
     }
 
     /**
+     * Display the specified article as AMP page.
+     *
+     * @param  string $slug
+     * @return \Illuminate\Http\Response
+     */
+    public function showAmp($slug)
+    {
+        $article = Article::where('slug', $slug)->first();
+        return view('pages.article-amp', compact('article'));
+    }
+
+    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id

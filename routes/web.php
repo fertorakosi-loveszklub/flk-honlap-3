@@ -19,6 +19,7 @@ Route::get('/galeria', 'GalleryController@showList');
 Route::get('/galeria/{slug}', 'GalleryController@show');
 Route::get('/hirek', 'NewsController@showList');
 Route::get('/hirek/{slug}', 'NewsController@show');
+Route::get('/hirek/{slug}/amp', 'NewsController@showAmp');
 Route::get('/dokumentumok', 'DocumentController@showList');
 Route::get('/kapcsolat', 'ContactController@index');
 Route::post('/kapcsolat', 'ContactController@postContact');
