@@ -20,7 +20,8 @@
         "author": "{{ $article->author->name }}",
         "publisher": {
           "@type": "Organization",
-          "name": "Fertőrákosi Lövészklub"
+          "name": "Fertőrákosi Lövészklub",
+          "logo": {{ url('/img/logo.png') }}
         },
         "mainEntityOfPage": {
             "@type": "WebPage",
