@@ -100,7 +100,6 @@
 
         amp-img {
             background: #888;
-            border: 1px solid #666;
         }
     </style>
 </head>
