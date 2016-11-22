@@ -18,7 +18,10 @@
         "dateModified": "{{ $article->modification_date->toAtomString() }}",
         "image": "{{ url('/img/fb_share.jpg') }}",
         "author": "{{ $article->author->name }}",
-        "publisher": "Fertőrákosi Lövészklub",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Fertőrákosi Lövészklub"
+        },
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https://www.fertorakosi-loveszklub.hu/"
