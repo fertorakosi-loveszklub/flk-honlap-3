@@ -19,9 +19,9 @@
         "image": "{{ url('/img/fb_share.jpg') }}",
         "author": "{{ $article->author->name }}",
         "publisher": "Fertőrákosi Lövészklub",
-         "mainEntityOfPage": {
+        "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https://www.fertorakosi-loveszklub.hu/",
+            "@id": "https://www.fertorakosi-loveszklub.hu/"
         },
         "description": "{{ $article->lead }}"
       }
