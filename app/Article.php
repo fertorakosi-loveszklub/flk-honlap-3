@@ -54,7 +54,7 @@ class Article extends Model
         $this->attributes['published_at'] = new Carbon($date);
     }
 
-    public function getModificationDate()
+    public function getModificationDateAttribute()
     {
         if ($this->updated_at > $this->published_at) {
             return $this->updated_at;
