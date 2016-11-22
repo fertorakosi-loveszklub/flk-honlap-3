@@ -23,6 +23,7 @@
             "@type": "WebPage",
             "@id": "https://www.fertorakosi-loveszklub.hu/",
         },
+        "description": "{{ $article->lead }}"
       }
 
     </script>
