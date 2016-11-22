@@ -15,10 +15,14 @@
         "@type": "NewsArticle",
         "headline": "{{ $article->lead }}",
         "datePublished": "{{ $article->published_at->toAtomString() }}",
-        "image": [
-          "{{ url('/img/fb_share.jpg') }}"
-        ],
-        "author":
+        "dateModified": "{{ $article->modification_date->toAtomString() }}",
+        "image": "{{ url('/img/fb_share.jpg') }}",
+        "author": {{ $article->author->name }},
+        "publisher": "Fertőrákosi Lövészklub",
+         "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://www.fertorakosi-loveszklub.hu/",
+        },
       }
 
     </script>

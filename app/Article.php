@@ -24,6 +24,7 @@ class Article extends Model
     protected $dates = [
         'published_at'
     ];
+
     /**
      * Return the sluggable configuration array for this model.
      *
