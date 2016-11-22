@@ -14,12 +14,13 @@
         </div>
 
         <div id="document-list">
-            @forelse($documents as $document)
-                <div class="row">
-                    <div class="col-xs-12">
-                        <h1>Dokumentumok</h1>
-                    </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1>Dokumentumok</h1>
                 </div>
+            </div>
+
+            @forelse($documents as $document)
                 <div class="row file-row">
                     <div class="col-xs-12 col-sm-8">
                         <a href="{{ url($document->file_path) }}" target="_blank" class="text-center visible-xs">
