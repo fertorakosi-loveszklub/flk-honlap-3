@@ -17,7 +17,7 @@
         "datePublished": "{{ $article->published_at->toAtomString() }}",
         "dateModified": "{{ $article->modification_date->toAtomString() }}",
         "image": "{{ url('/img/fb_share.jpg') }}",
-        "author": {{ $article->author->name }},
+        "author": "{{ $article->author->name }}",
         "publisher": "Fertőrákosi Lövészklub",
          "mainEntityOfPage": {
             "@type": "WebPage",
