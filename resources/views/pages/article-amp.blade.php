@@ -21,7 +21,7 @@
         "publisher": {
           "@type": "Organization",
           "name": "Fertőrákosi Lövészklub",
-          "logo": {{ url('/img/logo.png') }}
+          "logo": "{{ url('/img/logo.png') }}"
         },
         "mainEntityOfPage": {
             "@type": "WebPage",
