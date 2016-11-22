@@ -53,6 +53,15 @@ class Article extends Model
         $this->attributes['published_at'] = new Carbon($date);
     }
 
+    public function getModificationDate()
+    {
+        if ($this->updated_at > $this->published_at) {
+            return $this->updated_at;
+        }
+
+        return $this->published_at;
+    }
+
     public function author()
     {
         return $this->belongsTo(User::class, 'author_id');

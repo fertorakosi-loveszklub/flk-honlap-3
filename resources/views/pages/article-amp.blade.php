@@ -17,7 +17,8 @@
         "datePublished": "{{ $article->published_at->toAtomString() }}",
         "image": [
           "{{ url('/img/fb_share.jpg') }}"
-        ]
+        ],
+        "author":
       }
 
     </script>
@@ -113,6 +114,10 @@
         amp-img {
             background: #888;
         }
+
+        h1 {
+            color: #4564ae;
+        }
     </style>
 </head>
 <body>
@@ -121,7 +126,7 @@
              height="127"></amp-img>
 </div>
 
-<h1 style="color: #4564ae;">{{ $article->title }}</h1>
+<h1>{{ $article->title }}</h1>
 
 <p class="small">
     {{ $article->published_at->format('Y. m. d.') }}
