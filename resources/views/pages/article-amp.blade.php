@@ -98,28 +98,40 @@
             text-decoration: none;
         }
 
+        .small {
+            font-size: .75em;
+        }
+
+        .lead {
+            font-weight: bold;
+        }
+
+        .center {
+            text-align: center;
+        }
+
         amp-img {
             background: #888;
         }
     </style>
 </head>
 <body>
-<div style="text-align: center">
+<div class="center">
     <amp-img src="{{ url('/img/logo_small.png') }}" width="100"
              height="127"></amp-img>
 </div>
 
 <h1 style="color: #4564ae;">{{ $article->title }}</h1>
 
-<p style="font-size: .75em">
+<p class="small">
     {{ $article->published_at->format('Y. m. d.') }}
 </p>
 
-<p style="font-weight:bold; margin: 15px 0;">
+<p class="lead">
     {{ $article->lead }}
 </p>
 
-{!! $article->content !!}
+{!! strip_tags($article->content, '<br><p><div><ul><li><a><span><h1><h2><h3><h4>') !!}
 
 <a class="full" href="{{ url('/hirek/' . $article->slug) }}">
     Teljes verzió megtekintése
