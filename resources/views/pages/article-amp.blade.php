@@ -1,5 +1,5 @@
 <!doctype html>
-<html amp lang="en">
+<html amp lang="hu">
 <head>
     <meta charset="utf-8">
     <script async custom-element="amp-analytics"
@@ -9,6 +9,7 @@
     <link rel="canonical" href="{{ url('/hirek/' . $article->slug) }}">
     <meta name="viewport"
           content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="description" content="{{ $article->lead }}">
     <script type="application/ld+json">
       {
         "@context": "http://schema.org",
