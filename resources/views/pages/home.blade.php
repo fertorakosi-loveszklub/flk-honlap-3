@@ -35,6 +35,20 @@
 
 @section('content')
     <div class="container" id="home">
+        <div class="row" id="home--support">
+            <div class="col-xs-12 text-center">
+                <h2>Támogass minket!</h2>
+
+                <p class="large">
+                    Ajánld fel adód 1%-át klubunk részére!
+                    <br>
+                    Adószámunk: <strong>19105598-1-08</strong>
+                </p>
+
+                <hr>
+            </div>
+        </div>
+
         <div class="row">
             <div class="col-xs-12">
                 <h2 class="text-center">Próbáld ki magad!</h2>
