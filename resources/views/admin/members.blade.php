@@ -22,7 +22,7 @@
                     {{ $member->name }}
                 </td>
                 <td>
-                    {{ $member->birth_place }}, {{ $member->born_at->format('Y. m. d.') }}
+                    {{ $member->birth_place }}, {{ $member->birthday->format('Y. m. d.') }}
                 </td>
                 <td>
                     <a href="{{ route('members.edit', ['members' => $member->id]) }}" class="left blue darken-1 btn-floating waves-effect">

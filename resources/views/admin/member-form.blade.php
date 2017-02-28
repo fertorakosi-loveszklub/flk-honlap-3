@@ -42,7 +42,7 @@
         <div class="input-group">
             <label for="born_at">Szül. dátum (ÉÉÉÉ-HH-NN)</label>
             <input type="text" name="born_at"
-                   @if ($member->exists) value="{{ old('born_at', $member->born_at->format('Y-m-d')) }}"
+                   @if ($member->exists) value="{{ old('born_at', $member->birthday->format('Y-m-d')) }}"
                    @else value="{{ old('born_at', \Carbon\Carbon::today()->format('Y-m-d')) }}"
                    @endif
                    class="form-control">

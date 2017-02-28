@@ -6,16 +6,18 @@ trait EncryptedAttributes
 {
     public function getAttribute($key)
     {
-        if (array_has($this->encryptedAttributes, $key)) {
-            return decrypt(parent::getAttribute($key));
+        $value = parent::getAttribute($key);
+
+        if (in_array($key, $this->encryptedAttributes) && $value != '') {
+            $value = decrypt($value);
         }
 
-        return parent::getAttribute($key);
+        return $value;
     }
 
     public function setAttribute($key, $value)
     {
-        if (array_has($this->encryptedAttributes, $key)) {
+        if (in_array($key, $this->encryptedAttributes)) {
             return parent::setAttribute($key, encrypt($value));
         }
 
