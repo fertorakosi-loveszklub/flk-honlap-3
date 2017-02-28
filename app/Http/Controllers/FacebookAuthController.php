@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 
-use App\Http\Requests;
 use App\User;
 use Auth;
 use Exception;
@@ -17,6 +16,12 @@ class FacebookAuthController extends Controller
     {
         $redirectUrl = $facebookSdk->getLoginUrl(['public_profile'], url('/facebook/callback'));
         return redirect($redirectUrl);
+    }
+
+    public function logout()
+    {
+        auth()->logout();
+        return redirect()->to('/');
     }
 
     public function callback(LaravelFacebookSdk $facebookSdk)

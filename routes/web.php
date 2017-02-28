@@ -12,6 +12,7 @@
 */
 Route::get('/facebook/login', 'FacebookAuthController@login');
 Route::get('/facebook/callback', 'FacebookAuthController@callback');
+Route::get('/auth/logout', 'FacebookAuthController@logout');
 
 Route::get('/', 'HomeController@index');
 Route::get('/rolunk', 'PageController@showAbout');

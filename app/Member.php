@@ -3,10 +3,9 @@
 namespace App;
 
 use App\Traits\EncryptedAttributes;
-use Crypt;
 use Illuminate\Database\Eloquent\Model;
 
-class MemberProfile extends Model
+class Member extends Model
 {
     use EncryptedAttributes;
 
@@ -29,5 +28,10 @@ class MemberProfile extends Model
         'phone',
         'email',
         'birth_place',
+        'born_at'
+    ];
+
+    protected $dates = [
+        'joined_at'
     ];
 }
