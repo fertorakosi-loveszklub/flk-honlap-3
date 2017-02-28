@@ -23,10 +23,10 @@
                     </a>
                 </td>
                 <td>
-                    <a href="{{ route('documents.edit', ['documents' => $document->id]) }}" class="left blue darken-1 btn-floating waves-effect">
+                    <a href="{{ route('documents.edit', ['documents' => $document->id]) }}" class="blue darken-1 btn-floating waves-effect">
                         <i class="material-icons">edit</i>
                     </a>
-                    <form action="{{ route('documents.destroy', ['documents' => $document->id]) }}" class="left" method="post">
+                    <form action="{{ route('documents.destroy', ['documents' => $document->id]) }}" method="post">
                         {{ csrf_field() }}
                         {{ method_field('DELETE') }}
 

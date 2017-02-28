@@ -19,10 +19,10 @@
                 <td>{{ $page->id }}</td>
                 <td>{{ $page->title }}</td>
                 <td>
-                    <a href="{{ route('pages.edit', ['pages' => $page->id]) }}" class="left blue darken-1 btn-floating waves-effect">
+                    <a href="{{ route('pages.edit', ['pages' => $page->id]) }}" class="blue darken-1 btn-floating waves-effect">
                         <i class="material-icons">edit</i>
                     </a>
-                    <form action="{{ route('pages.destroy', ['pages' => $page->id]) }}" class="left" method="post">
+                    <form action="{{ route('pages.destroy', ['pages' => $page->id]) }}" method="post">
                         {{ csrf_field() }}
                         {{ method_field('DELETE') }}
 

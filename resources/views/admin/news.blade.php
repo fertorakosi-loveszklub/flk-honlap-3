@@ -35,14 +35,14 @@
                 </td>
                 <td>{{ $article->published_at->format('Y. m. d. H:i') }}</td>
                 <td>
-                    <a href="{{ route('news.edit', ['news' => $article->id]) }}" class="left blue darken-1 btn-floating waves-effect waves-effect">
+                    <a href="{{ route('news.edit', ['news' => $article->id]) }}" class="blue darken-1 btn-floating waves-effect waves-effect">
                         <i class="material-icons">edit</i>
                     </a>
                     <form action="{{ route('news.destroy', ['news' => $article->id]) }}" method="post">
                         {{ csrf_field() }}
                         {{ method_field('DELETE') }}
 
-                        <button type="submit" class="left btn-floating waves-effect red darken-1">
+                        <button type="submit" class="btn-floating waves-effect red darken-1">
                             <i class="material-icons">delete</i>
                         </button>
                     </form>

@@ -19,10 +19,10 @@
                 <td>{{ $gallery->id }}</td>
                 <td>{{ $gallery->title }}</td>
                 <td>
-                    <a href="{{ route('galleries.edit', ['galleries' => $gallery->id]) }}" class="left blue darken-1 btn-floating waves-effect">
+                    <a href="{{ route('galleries.edit', ['galleries' => $gallery->id]) }}" class="blue darken-1 btn-floating waves-effect">
                         <i class="material-icons">edit</i>
                     </a>
-                    <form action="{{ route('galleries.destroy', ['galleries' => $gallery->id]) }}" class="left" method="post">
+                    <form action="{{ route('galleries.destroy', ['galleries' => $gallery->id]) }}" method="post">
                         {{ csrf_field() }}
                         {{ method_field('DELETE') }}
 

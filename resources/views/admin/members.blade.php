@@ -25,10 +25,10 @@
                     {{ $member->birth_place }}, {{ $member->birthday->format('Y. m. d.') }}
                 </td>
                 <td>
-                    <a href="{{ route('members.edit', ['members' => $member->id]) }}" class="left blue darken-1 btn-floating waves-effect">
+                    <a href="{{ route('members.edit', ['members' => $member->id]) }}" class="blue darken-1 btn-floating waves-effect">
                         <i class="material-icons">edit</i>
                     </a>
-                    <form action="{{ route('members.destroy', ['members' => $member->id]) }}" class="left" method="post">
+                    <form action="{{ route('members.destroy', ['members' => $member->id]) }}" method="post">
                         {{ csrf_field() }}
                         {{ method_field('DELETE') }}
 

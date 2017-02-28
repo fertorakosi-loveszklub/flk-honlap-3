@@ -70,6 +70,12 @@ td form button{
   margin-left: 15px;
 }
 
+td {
+  form  {
+    display: inline-block;
+  }
+}
+
 /** Responsive tables */
 @media (max-width: 991px) {
   /* Force table to not be like tables anymore */
