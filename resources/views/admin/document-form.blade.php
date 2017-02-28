@@ -1,4 +1,6 @@
-@extends('admin')
+@extends('admin', [
+    'title' => 'Dokumentumok'
+])
 
 @section('content')
     <h3 class="panel-title">Dokumentum szerkesztése</h3>

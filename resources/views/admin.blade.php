@@ -37,6 +37,7 @@
         <li @if (session('admin_module') == 'gallery')class="active"@endif><a href="/admin/galleries">Galéria</a></li>
         <li @if (session('admin_module') == 'documents')class="active"@endif><a href="/admin/documents">Dokumentumok</a></li>
         <li @if (session('admin_module') == 'pages')class="active"@endif><a href="/admin/pages">Tartalmak</a></li>
+        <li @if (session('admin_module') == 'member')class="active"@endif><a href="/admin/members">Tagok</a></li>
     </ul>
     <a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only">
         <i class="material-icons">menu</i>

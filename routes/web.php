@@ -10,6 +10,7 @@
 | to using a Closure or controller method. Build something great!
 |
 */
+
 Route::get('/facebook/login', 'FacebookAuthController@login');
 Route::get('/facebook/callback', 'FacebookAuthController@callback');
 Route::get('/auth/logout', 'FacebookAuthController@logout');
@@ -32,4 +33,5 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin']], function () {
     Route::resource('/galleries', 'GalleryController', ['except' => ['show']]);
     Route::resource('/documents', 'DocumentController', ['except' => ['show']]);
     Route::resource('/pages', 'PageController', ['except' => ['show']]);
+    Route::resource('/members', 'MemberController', ['except' => ['show']]);
 });

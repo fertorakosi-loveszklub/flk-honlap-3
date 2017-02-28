@@ -130,7 +130,7 @@ class DocumentController extends Controller
 
         return redirect('/admin/documents')->with('status', [
             'type' => 'success',
-            'message' => 'Dokumentum sikeresen frissítve'
+            'message' => 'Dokumentum sikeresen törölve'
         ]);
     }
 

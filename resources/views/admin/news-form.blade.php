@@ -1,4 +1,6 @@
-@extends('admin')
+@extends('admin', [
+    'title' => 'Hírek'
+])
 
 @section('content')
     <h3 class="panel-title">Hír szerkesztése</h3>

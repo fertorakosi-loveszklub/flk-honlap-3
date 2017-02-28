@@ -1,4 +1,6 @@
-@extends('admin')
+@extends('admin', [
+    'title' => 'Galéria'
+])
 
 @section('content')
     <div class="panel panel-primary">

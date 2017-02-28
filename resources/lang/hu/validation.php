@@ -116,6 +116,13 @@ return [
         'title' => 'cím',
         'lead' => 'bevezető',
         'content' => 'tartalom',
-        'published_at' => 'megjelenés dátuma'
+        'published_at' => 'megjelenés dátuma',
+        'name' => 'név',
+        'born_at' => 'születési dátum',
+        'birth_place' => 'születési hely',
+        'mother_name' => 'anyja neve',
+        'address' => 'lakcím',
+        'joined_at' => 'csatlakozás dátuma',
+        'card_id' => 'tagsági szám '
     ],
 ];
