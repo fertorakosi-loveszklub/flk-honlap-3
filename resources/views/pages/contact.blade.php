@@ -22,9 +22,6 @@
                 <p class="clearfix">
                     <strong class="info-title">Telefonszám:</strong>
                     <span class="info-content">(30) 38 56 603 (Fekete Zsolt)</span>
-                    <br>
-                    <span class="info-title">&nbsp;</span>
-                    <span class="info-content">(30) 29 29 755 (Ifj. Fekete Zsolt)</span>
                 </p>
 
                 <h3>Edzések</h3>
