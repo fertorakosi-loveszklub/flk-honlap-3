@@ -4,7 +4,7 @@
     <section id="slider" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner" role="listbox">
             <div class="item active">
-                <img src="/img/gun-1.jpg" alt="Légfegyveres lövészet">
+                <img src="/img/jazmin.jpg" alt="Légfegyveres lövészet">
                 <div class="carousel-caption">
                     <h2>Sportlövészet <br>
                         Kicsiknek és nagyoknak
