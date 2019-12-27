@@ -184,6 +184,7 @@ return [
         Folklore\Image\ImageServiceProvider::class,
         Jenssegers\Date\DateServiceProvider::class,
         Msurguy\Honeypot\HoneypotServiceProvider::class,
+        Spatie\Backup\BackupServiceProvider::class,
     ],
 
     /*

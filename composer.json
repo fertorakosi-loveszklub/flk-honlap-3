@@ -13,7 +13,9 @@
         "folklore/image": "^0.3.16",
         "jenssegers/date": "^3.2",
         "msurguy/honeypot": "^1.0",
-        "doctrine/dbal": "^2.5"
+        "doctrine/dbal": "^2.5",
+        "spatie/laravel-backup": "^3.0.0",
+        "league/flysystem-aws-s3-v3": "~1.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
