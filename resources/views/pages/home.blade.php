@@ -65,7 +65,7 @@
             <div class="col-xs-12 col-sm-4">
                 <img src="/img/gun_small.jpg" alt="Sportlövészet">
                 <h3>Sportlövészet</h3>
-                <p>Sportlövészet kiskaliberű fegyverekkel <br> Sportpisztoly 25m-es távon, sportpuska 50m-en</p>
+                <p>Sportlövészet kis- és nagykaliberű fegyverekkel <br> Sportpisztoly 25m-es távon, sportpuska 50m-en</p>
             </div>
 
             <div class="col-xs-12 col-sm-4">
