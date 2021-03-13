@@ -46,6 +46,12 @@
 
 <main>
     <div class="container">
+        <div class="alert alert-danger">
+            Az admin működik, azonban a változtatások nem élesednek automatikusan.
+            <br>
+            Ha frissítettél valamit, szólj Zsoltinak :)
+        </div>
+
         @if (session('status'))
             <div class="alert alert-{{ session('status')['type'] }}">
                 {{ session('status')['message'] }}
