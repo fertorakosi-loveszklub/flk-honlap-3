@@ -21,7 +21,7 @@ class FacebookAuthController extends Controller
     public function logout()
     {
         auth()->logout();
-        return redirect()->to('/admin');
+        return redirect()->to('/');
     }
 
     public function callback(LaravelFacebookSdk $facebookSdk)
@@ -58,7 +58,7 @@ class FacebookAuthController extends Controller
 
         Auth::login($user, true);
 
-        return redirect('/');
+        return redirect('/admin');
     }
 
     public function saveName(Request $request)
