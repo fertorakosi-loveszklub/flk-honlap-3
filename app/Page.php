@@ -11,4 +11,10 @@ class Page extends Model
         'title',
         'content'
     ];
+
+    protected $visible = [
+        'slug',
+        'title',
+        'content',
+    ];
 }

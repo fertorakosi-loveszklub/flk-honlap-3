@@ -74,4 +74,23 @@ class Article extends Model
             ->where('published_at', '<=', Carbon::now())
             ->where('is_visible', true);
     }
+
+    public function toArray()
+    {
+        return [
+            'slug' => $this->slug,
+            'title' => $this->title,
+            'published_at' => [
+                'iso' => $this->published_at->format('Y-m-d'),
+                'formatted' => $this->publication->format('Y. F j.'),
+            ],
+            'short_lead' => str_limit($this->lead, 250),
+            'lead' => $this->lead,
+            'content' => $this->content,
+            'author' => empty($this->author) ? null : [
+                'name' => $this->author->name,
+                'facebook_user_id' => $this->author->facebook_user_id,
+            ],
+        ];
+    }
 }

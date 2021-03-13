@@ -10,4 +10,18 @@ class Document extends Model
         'title',
         'file_path'
     ];
+
+    protected $visible = [
+        'title',
+        'url',
+    ];
+
+    protected $appends = [
+        'url',
+    ];
+
+    public function getUrlAttribute()
+    {
+        return url($this->file_path);
+    }
 }

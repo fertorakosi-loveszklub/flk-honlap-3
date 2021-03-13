@@ -13,6 +13,10 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:api');
+Route::get('/latest-articles', '\App\Http\Controllers\Api\ArticleController@latest');
+Route::get('/articles', '\App\Http\Controllers\Api\ArticleController@index');
+Route::get('/articles/{slug}', '\App\Http\Controllers\Api\ArticleController@show');
+
+Route::get('/pages/rolunk', '\App\Http\Controllers\Api\PageController@showAbout');
+
+Route::get('/documents', '\App\Http\Controllers\Api\DocumentController@index');

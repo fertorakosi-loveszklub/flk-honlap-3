@@ -185,6 +185,7 @@ return [
         Jenssegers\Date\DateServiceProvider::class,
         Msurguy\Honeypot\HoneypotServiceProvider::class,
         Spatie\Backup\BackupServiceProvider::class,
+        Barryvdh\Cors\ServiceProvider::class,
     ],
 
     /*
